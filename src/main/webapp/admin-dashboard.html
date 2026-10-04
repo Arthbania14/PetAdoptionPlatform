@@ -2,20 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard</title>
+    <title>Admin Dashboard - Pet Adoption</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 40px; }
-        .card { background: white; padding: 30px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; }
-        a { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #e74c3c; color: white; text-decoration: none; border-radius: 5px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f0f2f5; }
+        .navbar {
+            background: #2c3e50;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h2 { font-size: 22px; }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+        }
+        .navbar a:hover { color: #3498db; }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .welcome {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: #2c3e50; margin-bottom: 10px; }
+        .card p { color: #666; margin-bottom: 20px; font-size: 14px; }
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .card a:hover { background: #2980b9; }
     </style>
 </head>
 <body>
-<div class="card">
-    <h1>Admin Dashboard</h1>
-    <p>Welcome, Admin!</p>
-    <p>This is a temporary dashboard. We will add User Management, Pet Approval, and Analytics later.</p>
-    <a href="index.html">Logout</a>
+<div class="navbar">
+    <h2>Admin Dashboard</h2>
+    <div>
+        <a href="admin-dashboard.html">Home</a>
+        <a href="ViewUsersServlet">Manage Users</a>
+        <a href="ViewPetsServlet">Manage Pets</a>
+        <a href="LogoutServlet">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="welcome">
+        <h2>Welcome, Admin!</h2>
+        <p>Manage users, approve pet listings, and monitor the platform.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Manage Users</h3>
+            <p>View and manage all registered users on the platform.</p>
+            <a href="ViewUsersServlet">Go to Users</a>
+        </div>
+        <div class="card">
+            <h3>Manage Pets</h3>
+            <p>Approve or reject pet listings submitted by shelters.</p>
+            <a href="ViewPetsServlet">Go to Pets</a>
+        </div>
+        <div class="card">
+            <h3>Platform Stats</h3>
+            <p>View basic statistics about users and adoptions.</p>
+            <a href="#">Coming Soon</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>
