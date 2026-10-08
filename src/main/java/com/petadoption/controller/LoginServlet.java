@@ -1,5 +1,5 @@
 package com.petadoption.controller;
-
+import com.petadoption.util.StatsThread;
 import com.petadoption.dao.UserDAO;
 import com.petadoption.model.User;
 import jakarta.servlet.ServletException;
@@ -32,6 +32,9 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("name", user.getName());
             session.setAttribute("role", user.getRole());
 
+            // Start background stats thread
+            new StatsThread().start();
+
             // Redirect based on role
             String role = user.getRole();
 
@@ -44,7 +47,6 @@ public class LoginServlet extends HttpServlet {
             } else {
                 response.sendRedirect("index.html");
             }
-
         } else {
             // Login failed
             response.getWriter().println(
