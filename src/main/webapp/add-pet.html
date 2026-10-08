@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Pet</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 0; }
+        .navbar { background: #27ae60; color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .navbar a { color: white; text-decoration: none; margin-left: 20px; }
+        .container { max-width: 600px; margin: 40px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; margin-bottom: 25px; text-align: center; }
+        label { display: block; margin-bottom: 6px; font-weight: bold; color: #333; }
+        input, select, textarea { width: 100%; padding: 10px; margin-bottom: 18px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        textarea { height: 100px; resize: none; }
+        button { width: 100%; padding: 14px; background: #27ae60; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #219150; }
+    </style>
+</head>
+<body>
+<div class="navbar">
+    <h2>Shelter Dashboard</h2>
+    <div>
+        <a href="shelter-dashboard.html">Home</a>
+        <a href="add-pet.html">Add Pet</a>
+        <a href="LogoutServlet">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Add New Pet</h2>
+    <form action="AddPetServlet" method="post">
+        <label>Pet Name</label>
+        <input type="text" name="name" required>
+
+        <label>Type (Dog / Cat / Bird etc.)</label>
+        <input type="text" name="type" required>
+
+        <label>Breed</label>
+        <input type="text" name="breed">
+
+        <label>Age (in years)</label>
+        <input type="number" name="age" min="0" required>
+
+        <label>Gender</label>
+        <select name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unknown">Unknown</option>
+        </select>
+
+        <label>Description</label>
+        <textarea name="description" placeholder="Write about the pet..."></textarea>
+
+        <button type="submit">Add Pet</button>
+    </form>
+</div>
+</body>
+</html>

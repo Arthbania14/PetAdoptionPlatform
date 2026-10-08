@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class UserDAO {
+public class UserDAO implements UserDAOInterface {
 
     // Register a new user
     public boolean registerUser(User user) {

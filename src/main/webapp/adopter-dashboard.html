@@ -4,17 +4,49 @@
     <meta charset="UTF-8">
     <title>Adopter Dashboard</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 40px; }
-        .card { background: white; padding: 30px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #2980b9; }
-        a { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #e74c3c; color: white; text-decoration: none; border-radius: 5px; }
+        body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; }
+        .navbar { background: #2980b9; color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .navbar a { color: white; text-decoration: none; margin-left: 20px; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .welcome { background: white; padding: 25px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center; }
+        .card h3 { color: #2c3e50; margin-bottom: 10px; }
+        .card a { display: inline-block; margin-top: 15px; padding: 10px 18px; background: #2980b9; color: white; text-decoration: none; border-radius: 6px; }
     </style>
 </head>
 <body>
-<div class="card">
-    <h1>Adopter Dashboard</h1>
-    <p>Welcome, Adopter!</p>
-    <p>Here you can browse pets and track your applications.</p>
-    <a href="LogoutServlet">Logout</a></div>
+<div class="navbar">
+    <h2>Adopter Dashboard</h2>
+    <div>
+        <a href="adopter-dashboard.html">Home</a>
+        <a href="BrowsePetsServlet">Browse Pets</a>
+        <a href="LogoutServlet">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="welcome">
+        <h2>Welcome, Adopter!</h2>
+        <p>Find your perfect pet companion today.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Browse Pets</h3>
+            <p>See all available pets for adoption.</p>
+            <a href="BrowsePetsServlet">Browse Now</a>
+        </div>
+        <div class="card">
+            <h3>My Applications</h3>
+            <p>Track the status of your adoption requests.</p>
+            <a href="ViewMyApplicationsServlet">View Applications</a>        </div>
+        <div class="card">
+            <h3>My Profile</h3>
+            <p>Update your personal information.</p>
+            <a href="#">Coming Soon</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

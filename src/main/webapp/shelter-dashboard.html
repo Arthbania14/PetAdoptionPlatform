@@ -4,17 +4,50 @@
     <meta charset="UTF-8">
     <title>Shelter Dashboard</title>
     <style>
-        body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 40px; }
-        .card { background: white; padding: 30px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: #27ae60; }
-        a { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #e74c3c; color: white; text-decoration: none; border-radius: 5px; }
+        body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; }
+        .navbar { background: #27ae60; color: white; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; }
+        .navbar a { color: white; text-decoration: none; margin-left: 20px; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .welcome { background: white; padding: 25px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: center; }
+        .card h3 { color: #2c3e50; margin-bottom: 10px; }
+        .card a { display: inline-block; margin-top: 15px; padding: 10px 18px; background: #27ae60; color: white; text-decoration: none; border-radius: 6px; }
     </style>
 </head>
 <body>
-<div class="card">
-    <h1>Shelter Dashboard</h1>
-    <p>Welcome, Shelter!</p>
-    <p>Here you will manage pets and adoption applications.</p>
-    <a href="LogoutServlet">Logout</a></div>
+<div class="navbar">
+    <h2>Shelter Dashboard</h2>
+    <div>
+        <a href="shelter-dashboard.html">Home</a>
+        <a href="add-pet.html">Add Pet</a>
+        <a href="LogoutServlet">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="welcome">
+        <h2>Welcome, Shelter!</h2>
+        <p>Manage your pets and adoption applications here.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Add New Pet</h3>
+            <p>List a new pet for adoption.</p>
+            <a href="add-pet.html">Add Pet</a>
+        </div>
+        <div class="card">
+            <h3>My Pets</h3>
+            <p>View and manage your listed pets.</p>
+            <a href="ViewMyPetsServlet">View My Pets</a>
+        </div>
+        <div class="card">
+            <h3>Applications</h3>
+            <p>Review adoption requests.</p>
+            <a href="ViewShelterApplicationsServlet">View Applications</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
